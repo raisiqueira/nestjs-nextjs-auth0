@@ -1,7 +1,7 @@
 import { Injectable, NestMiddleware, Logger } from '@nestjs/common';
 import * as jwt from 'express-jwt';
 import { expressJwtSecret } from 'jwks-rsa';
-import { Request, Response } from 'express';
+import type { Request, Response } from 'express';
 import * as dotenv from 'dotenv';
 dotenv.config();
 

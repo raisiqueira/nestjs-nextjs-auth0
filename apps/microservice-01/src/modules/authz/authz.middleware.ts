@@ -1,4 +1,4 @@
-import { Injectable, NestMiddleware } from '@nestjs/common';
+import { Injectable, NestMiddleware, Logger } from '@nestjs/common';
 import * as jwt from 'express-jwt';
 import { expressJwtSecret } from 'jwks-rsa';
 import { Request, Response } from 'express';
@@ -21,7 +21,9 @@ export class AuthenticationMiddleware implements NestMiddleware {
       issuer: `${AUTH0_DOMAIN}/`,
       algorithms: [MAIN_ALGORITHM],
     })(req, res, (err) => {
+      Logger.log(`Auth Middleware success`);
       if (err) {
+        Logger.error(`Error middleware: ${err?.message}`);
         const status = err.status || 500;
         const message =
           err.message || 'Sorry we were unable to process your request.';

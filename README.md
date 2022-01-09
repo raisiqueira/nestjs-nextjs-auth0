@@ -2,6 +2,22 @@
 
 This is a monorepo with two microservices and one Next.js app. This project is used to test the **Auth0 SDK**.
 
+## Setup Auth0
+
+First of all, you need to create a new Auth0 API (under _Applications_ menu).
+
+### Setup microservice-01
+
+Now, you need to update `.env` file with your Auth0 API credentials. Go to `microservice-01` folder and do that.
+
+### Setup microservice-02
+
+After setting up the microservice-01, you need to update `.env` file with your Auth0 API credentials (create a Machine to Machine app and select the API that you have created). Go to `microservice-02` folder and do that.
+
+### Setup Next.js app
+
+Under _Applications_ menu, create a _Regular Web Applications_, copy your credentials, and udpate `.env` file with your Auth0 API credentials. Go to `web` folder and do that.
+
 ## What's inside?
 
 This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package manager. It includes the following packages/apps:
